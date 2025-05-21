@@ -183,7 +183,7 @@ a {
 }
 
 #backToTop:hover {
-    background: #979797;
+    background: #5e5e5e;
 }
 
 /*------------------ image gallery modal*/
@@ -506,9 +506,9 @@ a {
     }
 
     #backToTop {
-        bottom: 20px;
-        right: 10px;
-        padding: 6px 12px;
+        bottom: 40px;
+        right: -10%;
+        padding: 14px 21px;
         font-size: 0.85rem;
     }
 
