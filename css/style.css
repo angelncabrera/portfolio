@@ -94,11 +94,16 @@ a {
 }
 
 .material-symbols-outlined {
+    visibility: hidden;
     font-variation-settings:
     'FILL' 0,
     'wght' 40,
     'GRAD' 0,
     'opsz' 24
+}
+
+body.material-icons-loaded .material-symbols-outlined {
+  visibility: visible;
 }
 
 /*------------------ full name menu*/
@@ -167,23 +172,24 @@ a {
 /*------------------ back to the top button*/
 #backToTop {
     position: fixed;
-    bottom: 30px;
-    right: 20px;
+    bottom: 90px;
+    right: 5%;
     transform: translateX(-50%);
     font-size: .97rem;
-    padding: 8px 16px;
-    background-color: rgb(155, 155, 155);
+    padding: 10px 16px;
+    background-color: #4d4d4d79;
     color: rgb(255, 255, 255);
-    border-radius: 20px;
-    border: 1px solid #ffffff;
+    border-radius: 12px;
+    border: 1px solid #4d4d4d00;
     cursor: pointer;
     display: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 6px rgba(196, 196, 196, 0.1);
+    box-shadow: 0 2px 6px rgba(133, 133, 133, 0.603);
 }
 
 #backToTop:hover {
     background: #5e5e5e;
+    border: 1px solid #5e5e5e;
 }
 
 /*------------------ image gallery modal*/
@@ -214,6 +220,7 @@ a {
   align-items: center;
   z-index: 100000;
   flex-direction: column;
+  touch-action: pan-y;
 }
 
 .lightbox.hidden {
@@ -258,9 +265,10 @@ a {
   transform: translateY(-50%);
   transition: color 0.3s ease;
   z-index: 100001;
-  padding: 5px;
+  padding: 10px;
   border-radius: 50%;
   background-color: rgba(0,0,0,0.3);
+  align-items: center;
 }
 
 .arrow:hover {
@@ -379,6 +387,23 @@ a {
     opacity: 1;
   }
 }
+
+/*------------------ image grid preloader (furniture)*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 /*------------------ mobile phone width */
 @media only screen and (max-width: 600px) {
@@ -514,10 +539,13 @@ a {
     }
 
     #backToTop {
-        bottom: 40px;
-        right: -10%;
-        padding: 12px 21px;
-        font-size: 0.85rem;
+      position: fixed;
+      bottom: 40px;
+      right: 5%;
+      transform: translateX(-70%);
+      right: -10%;
+      padding: 12px 20px;
+      font-size: 0.97rem;
     }
 
     #mobileMenu {
@@ -549,8 +577,8 @@ a {
       top: 21px;
       right: 15px;
       z-index: 2000;
-      background-color: #c7c7c763;
-      color: rgb(116, 116, 116);
+      background-color: #68686877;
+      color: rgb(255, 255, 255);
       padding: 6.4px 9.6px;
       border: none;
       border-radius: 5px;

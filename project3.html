@@ -36,9 +36,12 @@
         <!-- Lightbox modal -->
         <div id="lightbox" class="lightbox hidden">
             <span class="close-btn material-symbols-outlined" onclick="closeLightbox()">close</span>
-            <img class="lightbox-img" src="" alt="">
-            <div class="arrow left material-symbols-outlined" onclick="changeImage(-1)">arrow_back_ios</div>
-            <div class="arrow right material-symbols-outlined" onclick="changeImage(1)">arrow_forward_ios</div>
+            
+            <div class="lightbox-content">
+                <img class="lightbox-img" src="" alt="">
+                <div class="arrow left material-symbols-outlined" onclick="changeImage(-1)">arrow_back_ios</div>
+                <div class="arrow right material-symbols-outlined" onclick="changeImage(1)">arrow_forward_ios</div>
+            </div>
         </div>
 
         <button id="backToTop" title="Back to top">Volver al inicio ↑</button>

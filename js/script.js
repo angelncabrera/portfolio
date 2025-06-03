@@ -70,7 +70,16 @@ window.onload = () => {
   });
 };
 
+document.getElementById("lightbox").addEventListener("click", function (e) {
+  const lightboxContent = document.querySelector(".lightbox-content");
 
+  if (!lightboxContent.contains(e.target)) {
+    closeLightbox();
+  }
+});
+
+
+// --------------------- mobile menu toggle
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
   const button = document.getElementById('menuButton');
@@ -79,10 +88,54 @@ function toggleMenu() {
   if (isOpen) {
     menu.classList.remove('show');
     button.textContent = 'Menu';
+    document.body.style.overflow = 'auto'; // vuelve a activar el scroll
   } else {
     menu.classList.add('show');
     button.textContent = 'Close';
+    document.body.style.overflow = 'hidden'; // bloquea el scroll
   }
 }
 
+// --------------------- furniture image preloader animation
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("fade-out");
+
+    setTimeout(() => {
+      preloader.remove();
+    }, 210);
+  });
+
+// --------------------- google arrows showing
+  document.fonts.load('1em "Material Symbols Outlined"').then(() => {
+  document.body.classList.add('material-icons-loaded');
+});
+
+// --------------------- swipe support for mobile phones
+let touchStartX = 0;
+let touchEndX = 0;
+
+const lightbox = document.getElementById('lightbox');
+
+lightbox.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+lightbox.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, false);
+
+function handleSwipe() {
+  const swipeThreshold = 50; // px mínimo para detectar swipe
+  const distance = touchEndX - touchStartX;
+
+  if (Math.abs(distance) > swipeThreshold) {
+    if (distance > 0) {
+      changeImage(-1); // Swipe derecha → imagen anterior
+    } else {
+      changeImage(1); // Swipe izquierda → imagen siguiente
+    }
+  }
+}
 
