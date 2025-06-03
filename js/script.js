@@ -72,9 +72,17 @@ window.onload = () => {
 
 
 function toggleMenu() {
-  const menu = document.querySelector(".sidebar ul");
-  menu.classList.toggle("active");
-  const menu1 = document.getElementById('mobileMenu');
-  menu1.classList.toggle('show');
+  const menu = document.getElementById('mobileMenu');
+  const button = document.getElementById('menuButton');
+  const isOpen = menu.classList.contains('show');
+
+  if (isOpen) {
+    menu.classList.remove('show');
+    button.textContent = 'Menu';
+  } else {
+    menu.classList.add('show');
+    button.textContent = 'Close';
+  }
 }
+
 
