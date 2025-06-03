@@ -220,7 +220,7 @@ body.material-icons-loaded .material-symbols-outlined {
   align-items: center;
   z-index: 100000;
   flex-direction: column;
-  touch-action: pan-y;
+  touch-action: manipulation;
 }
 
 .lightbox.hidden {
@@ -252,7 +252,7 @@ body.material-icons-loaded .material-symbols-outlined {
 }
 
 .close-btn:hover {
-  color: #ff5555;
+  color: #ffc0c0;
 }
 
 .arrow {
@@ -433,7 +433,6 @@ body.material-icons-loaded .material-symbols-outlined {
         left: 7% !important;
         color: white !important;
         background: rgba(0, 0, 0, 0.4) !important;
-        padding: 10px !important;
         border-radius: 6px !important;
         font-family: "Roboto Condensed", sans-serif !important;
     }
@@ -663,6 +662,7 @@ body.material-icons-loaded .material-symbols-outlined {
 
     .info{
         width: 50%;
-        left: 45%;
+        left: 40%;
+        padding: 20px;
     }
 }
