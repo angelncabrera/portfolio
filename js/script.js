@@ -78,7 +78,6 @@ document.getElementById("lightbox").addEventListener("click", function (e) {
   }
 });
 
-
 // --------------------- mobile menu toggle
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
@@ -87,11 +86,11 @@ function toggleMenu() {
 
   if (isOpen) {
     menu.classList.remove('show');
-    button.textContent = 'Menu';
+    button.textContent = 'Menú';
     document.body.style.overflow = 'auto'; // vuelve a activar el scroll
   } else {
     menu.classList.add('show');
-    button.textContent = 'Close';
+    button.textContent = 'Cerrar';
     document.body.style.overflow = 'hidden'; // bloquea el scroll
   }
 }
@@ -139,3 +138,11 @@ function handleSwipe() {
   }
 }
 
+// --------------------- back button
+function goBack() {
+  if (document.referrer !== "" && window.history.length > 1) {
+    window.history.back(); // vuelve al lugar real
+  } else {
+    window.location.href = "index.html"; // fallback si no hay historial
+  }
+}

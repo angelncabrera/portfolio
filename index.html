@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css?v=3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./css/style.css?v=4">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Portfolio</title>
 </head>
-<body>
+<body class="home">
     <div class="sidebar" id="sidebar-container"></div>
 
-    <div class="content">
-        <img class="mobileImg" style="width: 27%; position: fixed; top: 7%;" src="./assets/images/portada/portada.jpeg" alt="Residencia Rivera">
-    </div>
+    <section class="mainImg">
+        <img class="mobileImg" src="./assets/images/portada/portada.jpeg" alt="Residencia Rivera">
+    </section>
 
-    <script src="./js/script.js?v=3"></script>
+    <section class="principal">
+        <ul id="mobileMenu2">
+        <div id="menu-space"></div>
+        <li><a href="allprojects.html">Proyectos</a></li>
+        <li><a href="furnituredetails.html">Muebles y detalles</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        </ul>
+    </section>
+
+
+    <script src="./js/script.js?v=4"></script>
 </body>
 </html>
 
